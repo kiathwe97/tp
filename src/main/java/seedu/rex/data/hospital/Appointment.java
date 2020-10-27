@@ -11,6 +11,11 @@ public class Appointment {
     private Patient patient;
     private Doctor doctor;
     private String notes;
+
+    public void setBooked(Boolean booked) {
+        isBooked = booked;
+    }
+
     private Boolean isBooked;
 
     public Appointment(LocalDate date) {

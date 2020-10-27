@@ -38,7 +38,7 @@ public class DeletePatientCommand extends Command {
         assert patients != null : "patient ArrayList is null";
         assert ui != null : "ui is null";
         assert storage != null : "storage is null";
-        Rex.logger.log(Level.INFO, "going to extract NRIC");
+        //Rex.logger.log(Level.INFO, "going to extract NRIC");
         String nric = extractNric(trimmedCommand, COMMAND_WORD);
 
         if (patients.isExistingPatient(nric)) {
@@ -49,7 +49,7 @@ public class DeletePatientCommand extends Command {
 
             for (int i = 0; i < appointments.getSize(); i++) {
                 String tempNric = appointments.getAppointmentByIndex(i).getPatient().getNric();
-                if (tempNric.contentEquals(nric)) {
+                if (tempNric.contentEquals(nric.toLowerCase())) {
                     appointments.getAppointmentByIndex(i).setPatient(null);
                     appointments.getAppointmentByIndex(i).removeBooking();
                     appointments.getAppointmentByIndex(i).setDoctor(null);

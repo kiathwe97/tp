@@ -104,7 +104,7 @@ public class PatientList {
         assert nric != null && !nric.equals("") : "Cannot get patient of null nric";
 
         for (int i = 0; i < getSize(); i++) {
-            if (getPatientUsingIndex(i).getNric().equals(nric)) {
+            if (getPatientUsingIndex(i).getNric().equals(nric.toLowerCase())) {
                 return i;
             }
         }
@@ -135,7 +135,7 @@ public class PatientList {
     public Patient deletePatient(String nric) {
         int i;
         for (i = 0; i < getSize(); i++) {
-            if (getPatientUsingIndex(i).getNric().equals(nric)) {
+            if (getPatientUsingIndex(i).getNric().equals(nric.toLowerCase())) {
                 break;
             }
         }
