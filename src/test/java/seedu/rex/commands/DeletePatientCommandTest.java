@@ -52,7 +52,7 @@ class DeletePatientCommandTest {
 
     }
 
-
+    
     @Test
     public void execute() {
         init();
